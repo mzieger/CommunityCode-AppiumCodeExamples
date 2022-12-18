@@ -11,9 +11,9 @@ public class IOSTestBase {
 
     protected IOSDriver<IOSElement> driver = null;
     protected DesiredCapabilities dc = new DesiredCapabilities();
-    protected static final String CLOUD_URL = "https://qacloud.experitest.com/wd/hub";
-    static final String ACCESS_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJ4cC51IjoyNzI4MzkxLCJ4cC5wIjoyLCJ4cC5tIjoxNjA5MzE4NDg4Nzc3LCJleHAiOjE5MjQ2Nzg0ODgsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.66dIstPqaKCgG2rb6cbn9PkT8xxn2wgEZ0PGTBVGMBk";
-    static final String APPIUM_VERSION = "1.22.0";
+    protected String CLOUD_URL = "<CLOUD_URL>";
+    static final String ACCESS_KEY = "<ACCESS_KEY>";
+    static final String APPIUM_VERSION = "<APPIUM_VERSION>";
 
 
     @BeforeEach
