@@ -2,7 +2,7 @@ package advancedCommands;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
-import java.net.MalformedURLException;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -20,7 +20,9 @@ public class IOSTestBase {
     public void baseSetUp() {
         dc.setCapability("accessKey", ACCESS_KEY);
         dc.setCapability("appiumVersion", APPIUM_VERSION);
-        dc.setCapability("deviceQuery", "@os='ios' and @category='PHONE'");
+        dc.setCapability("deviceQuery", "@os='ios'");
+        dc.setCapability("platformName", "iOS");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
     }
 
 

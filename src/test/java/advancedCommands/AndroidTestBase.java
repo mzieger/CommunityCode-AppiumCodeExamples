@@ -2,6 +2,7 @@ package advancedCommands;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -19,7 +20,9 @@ public class AndroidTestBase {
     public void baseSetUp() {
         dc.setCapability("accessKey", ACCESS_KEY);
         dc.setCapability("appiumVersion", APPIUM_VERSION);
-        dc.setCapability("deviceQuery", "@os='android' and @category='PHONE'");
+        dc.setCapability("deviceQuery", "@os='android'");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
+        dc.setCapability("platformName", "Android");
     }
 
     @AfterEach

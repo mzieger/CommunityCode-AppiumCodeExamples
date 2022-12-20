@@ -25,6 +25,8 @@ public class IOSQuickStartTest {
         dc.setCapability("accessKey", accessKey);
         dc.setCapability("appiumVersion", appiumVersion);
         dc.setCapability("deviceQuery", "@os='ios'");
+        dc.setCapability("platformName", "iOS");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         dc.setCapability("testName", "Run Quickstart test on iOS device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");

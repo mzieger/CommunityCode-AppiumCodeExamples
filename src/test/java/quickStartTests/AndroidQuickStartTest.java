@@ -25,6 +25,8 @@ public class AndroidQuickStartTest {
         dc.setCapability("accessKey", accessKey);
         dc.setCapability("appiumVersion", appiumVersion);
         dc.setCapability("deviceQuery", "@os='android'");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
+        dc.setCapability("platformName", "Android");
         dc.setCapability("testName", "Run Quickstart test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
