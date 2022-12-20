@@ -14,9 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class InstallAppIOSTest extends IOSTestBase {
 
     private static final String APP_NAME = "com.experitest.ExperiBank";
-    private String APP_BUILD_VERSION = "1766";
-    private String APP_RELEASE_VERSION = "1.0";
-    private String APP_UNIQUE_NAME = "UIMASTER";
+    private String APP_BUILD_VERSION = "<APPLICATION_BUILD_VERSION>";
+    private String APP_RELEASE_VERSION = "<APPLICATION_RELEASE_VERSION>";
+    private String APP_UNIQUE_NAME = "<APPLICATION_UNIQUE_NAME>";
 
     @BeforeEach
     public void before() throws MalformedURLException {
