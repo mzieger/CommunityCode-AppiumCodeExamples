@@ -7,8 +7,6 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ScreenOrientation;
 
 
 public class ReportIOSTest extends IOSTestBase {
@@ -23,19 +21,12 @@ public class ReportIOSTest extends IOSTestBase {
 
     @Test
     public void addPassedStep() {
-        loginToEriBank();
-        driver.executeScript("seetest:client.report(\"step should be passed\",\"true\")");
+        driver.executeScript("seetest:client.report", "step should be passed", "true");
     }
 
     @Test
     public void addFailedStep() {
-        loginToEriBank();
-        driver.executeScript("seetest:client.report(\"step should be failed\",\"false\")");
+        driver.executeScript("seetest:client.report", "step should be failed", "false");
     }
-    private void loginToEriBank() {
-        driver.rotate(ScreenOrientation.PORTRAIT);
-        driver.findElement(By.xpath("//*[@name='usernameTextField']")).sendKeys("company");
-        driver.findElement(By.xpath("//*[@name='passwordTextField']")).sendKeys("company");
-        driver.findElement(By.xpath("//*[@name='loginButton']")).click();
-    }
+
 }
