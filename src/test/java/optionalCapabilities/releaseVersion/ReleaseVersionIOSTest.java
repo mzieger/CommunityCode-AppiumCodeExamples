@@ -16,21 +16,18 @@ public class ReleaseVersionIOSTest {
 
     IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String accessKey = "<ACCESS_KEY>";
-    String appiumVersion = "<APPIUM_VERSION>";
-    String cloudUrl = "<CLOUD_URL>" + "/wd/hub";
-    String appReleaseVersion = "<APP_RELEASE_VERSION>";
+
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        dc.setCapability("accessKey", accessKey);
-        dc.setCapability("appiumVersion", appiumVersion);
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='ios'");
         dc.setCapability("testName", "Release version test on iOS device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
-        dc.setCapability("appReleaseVersion", appReleaseVersion);
-        driver = new IOSDriver<>(new URL(cloudUrl), dc);
+        dc.setCapability("appReleaseVersion", "<APP_RELEASE_VERSION>");
+        driver = new IOSDriver<>(new URL("<CLOUD_URL>" + "/wd/hub"), dc);
     }
 
     @Test

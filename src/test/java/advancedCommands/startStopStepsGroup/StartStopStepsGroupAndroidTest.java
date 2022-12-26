@@ -13,9 +13,6 @@ import org.openqa.selenium.ScreenOrientation;
 
 public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
 
-    public static final String START_STEPS_GROUP = "seetest:client.startStepsGroup";
-    public static final String STOP_STEPS_GROUP = "seetest:client.stopStepsGroup";
-
     @BeforeEach
     public void before() throws MalformedURLException {
         dc.setCapability("testName", "Start and stop steps group test on Android device");
@@ -27,12 +24,12 @@ public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
 
     @Test
     public void startAndStopStepsGroup() {
-        driver.executeScript(START_STEPS_GROUP, "login group");
+        driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/passwordTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/loginButton")).click();
-        driver.executeScript(STOP_STEPS_GROUP);
+        driver.executeScript("seetest:client.stopStepsGroup");
         driver.findElement(By.id("com.experitest.ExperiBank:id/makePaymentButton")).click();
         driver.findElement(By.id("com.experitest.ExperiBank:id/phoneTextField")).sendKeys("0501234567");
         driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).sendKeys("John Snow");
@@ -44,13 +41,13 @@ public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
 
     @Test
     public void multipleGroups() {
-        driver.executeScript(START_STEPS_GROUP, "login group");
+        driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/passwordTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/loginButton")).click();
-        driver.executeScript(STOP_STEPS_GROUP);
-        driver.executeScript(START_STEPS_GROUP, "payment group");
+        driver.executeScript("seetest:client.stopStepsGroup");
+        driver.executeScript("seetest:client.startStepsGroup", "payment group");
         driver.findElement(By.id("com.experitest.ExperiBank:id/makePaymentButton")).click();
         driver.findElement(By.id("com.experitest.ExperiBank:id/phoneTextField")).sendKeys("0501234567");
         driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).sendKeys("John Snow");
@@ -58,6 +55,6 @@ public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
         driver.findElement(By.id("com.experitest.ExperiBank:id/countryTextField")).sendKeys("'Switzerland'");
         driver.findElement(By.id("com.experitest.ExperiBank:id/sendPaymentButton")).click();
         driver.findElement(By.id("android:id/button1")).click();
-        driver.executeScript(STOP_STEPS_GROUP);
+        driver.executeScript("seetest:client.stopStepsGroup");
     }
 }

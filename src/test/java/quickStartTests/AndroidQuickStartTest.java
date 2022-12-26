@@ -16,22 +16,18 @@ public class AndroidQuickStartTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String accessKey = "<ACCESS_KEY>";
-    String appiumVersion = "<APPIUM_VERSION>";
-    String cloudUrl = "<CLOUD_URL>" + "/wd/hub";
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        dc.setCapability("accessKey", accessKey);
-        dc.setCapability("appiumVersion", appiumVersion);
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
-        dc.setCapability("platformName", "Android");
         dc.setCapability("testName", "Run Quickstart test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
-        driver = new AndroidDriver<>(new URL(cloudUrl), dc);
+        driver = new AndroidDriver<>(new URL("<CLOUD_URL>" + "/wd/hub"), dc);
     }
 
     @Test

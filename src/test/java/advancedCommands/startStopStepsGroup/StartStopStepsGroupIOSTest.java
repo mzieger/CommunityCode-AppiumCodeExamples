@@ -12,8 +12,6 @@ import org.openqa.selenium.ScreenOrientation;
 
 public class StartStopStepsGroupIOSTest extends IOSTestBase {
 
-    public static final String START_STEPS_GROUP = "seetest:client.startStepsGroup";
-    public static final String STOP_STEPS_GROUP = "seetest:client.stopStepsGroup";
 
     @BeforeEach
     public void before() throws MalformedURLException {
@@ -26,12 +24,12 @@ public class StartStopStepsGroupIOSTest extends IOSTestBase {
 
     @Test
     public void startAndStopStepsGroup() {
-        driver.executeScript(START_STEPS_GROUP, "login group");
+        driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.xpath("//*[@name='usernameTextField']")).sendKeys("company");
         driver.findElement(By.xpath("//*[@name='passwordTextField']")).sendKeys("company");
         driver.findElement(By.xpath("//*[@name='loginButton']")).click();
-        driver.executeScript(STOP_STEPS_GROUP);
+        driver.executeScript("seetest:client.stopStepsGroup");
         driver.findElement(By.xpath("//*[@name='makePaymentButton']")).click();
         driver.findElement(By.xpath("//*[@name='phoneTextField']")).sendKeys("0501234567");
         driver.findElement(By.xpath("//*[@name='nameTextField']")).sendKeys("John Snow");
@@ -44,13 +42,13 @@ public class StartStopStepsGroupIOSTest extends IOSTestBase {
 
     @Test
     public void multipleGroups() {
-        driver.executeScript(START_STEPS_GROUP, "login group");
+        driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.xpath("//*[@name='usernameTextField']")).sendKeys("company");
         driver.findElement(By.xpath("//*[@name='passwordTextField']")).sendKeys("company");
         driver.findElement(By.xpath("//*[@name='loginButton']")).click();
-        driver.executeScript(STOP_STEPS_GROUP);
-        driver.executeScript(START_STEPS_GROUP, "payment group");
+        driver.executeScript("seetest:client.stopStepsGroup");
+        driver.executeScript("seetest:client.startStepsGroup", "payment group");
         driver.findElement(By.xpath("//*[@name='makePaymentButton']")).click();
         driver.findElement(By.xpath("//*[@name='phoneTextField']")).sendKeys("0501234567");
         driver.findElement(By.xpath("//*[@name='nameTextField']")).sendKeys("John Snow");
@@ -59,6 +57,6 @@ public class StartStopStepsGroupIOSTest extends IOSTestBase {
         driver.findElement(By.xpath("//*[@name='Switzerland']")).click();
         driver.findElement(By.xpath("//*[@name='sendPaymentButton']")).click();
         driver.findElement(By.xpath("//*[@name='Yes']")).click();
-        driver.executeScript(STOP_STEPS_GROUP);
+        driver.executeScript("seetest:client.stopStepsGroup");
     }
 }

@@ -17,22 +17,19 @@ public class ReporterDisableAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String accessKey = "<ACCESS_KEY>";
-    String appiumVersion = "<APPIUM_VERSION>";
-    String cloudUrl = "<CLOUD_URL>" + "/wd/hub";
 
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        dc.setCapability("accessKey", accessKey);
-        dc.setCapability("appiumVersion", appiumVersion);
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability("report.disable", true);
         dc.setCapability("testName", "Report disable test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
-        driver = new AndroidDriver<>(new URL(cloudUrl), dc);
+        driver = new AndroidDriver<>(new URL("<CLOUD_URL>" + "/wd/hub"), dc);
     }
 
     @Test

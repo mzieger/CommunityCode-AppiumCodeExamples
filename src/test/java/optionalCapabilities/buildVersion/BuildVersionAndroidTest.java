@@ -16,23 +16,18 @@ public class BuildVersionAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String accessKey = "<ACCESS_KEY>";
-    String appiumVersion = "<APPIUM_VERSION>";
-    String cloudUrl = "<CLOUD_URL>" + "/wd/hub";
-    String appBuildVersion = "<APP_BUILD_VERSION>";
-
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        dc.setCapability("accessKey", accessKey);
-        dc.setCapability("appiumVersion", appiumVersion);
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability("testName", "Build version test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
-        dc.setCapability("appBuildVersion", appBuildVersion);
-        driver = new AndroidDriver<>(new URL(cloudUrl), dc);
+        dc.setCapability("appBuildVersion", "<APP_BUILD_VERSION>");
+        driver = new AndroidDriver<>(new URL("<CLOUD_URL>" + "/wd/hub"), dc);
     }
 
     @Test

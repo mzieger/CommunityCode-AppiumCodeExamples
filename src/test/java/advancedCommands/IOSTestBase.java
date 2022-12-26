@@ -12,16 +12,13 @@ public class IOSTestBase {
     protected IOSDriver<IOSElement> driver = null;
     protected DesiredCapabilities dc = new DesiredCapabilities();
     protected String CLOUD_URL = "<CLOUD_URL>";
-    static final String ACCESS_KEY = "<ACCESS_KEY>";
-    static final String APPIUM_VERSION = "<APPIUM_VERSION>";
 
 
     @BeforeEach
     public void baseSetUp() {
-        dc.setCapability("accessKey", ACCESS_KEY);
-        dc.setCapability("appiumVersion", APPIUM_VERSION);
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='ios'");
-        dc.setCapability("platformName", "iOS");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
     }
 
