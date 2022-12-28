@@ -8,8 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.jupiter.api.*;
 
-
-public class ReportAndroidTest extends AndroidTestBase {
+/**
+ * Adds a step to the generated report
+ */
+class ReportAndroidTest extends AndroidTestBase {
 
 
     @BeforeEach
@@ -23,12 +25,12 @@ public class ReportAndroidTest extends AndroidTestBase {
 
 
     @Test
-    public void addPassedStep() {
+    void addPassedStep() {
         driver.executeScript("seetest:client.report", "step should be passed", "true");
     }
 
     @Test
-    public void addFailedStep() {
+    void addFailedStep() {
         driver.executeScript("seetest:client.report", "step should be failed", "false");
     }
 

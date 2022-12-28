@@ -10,8 +10,11 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 
-
-public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
+/**
+ * StartStepsGroup begins a group marks (and StopStepsGroup ends it).
+ * All the steps that appear between those two steps will appear under the same group on the report.
+ */
+class StartStopStepsGroupAndroidTest extends AndroidTestBase {
 
     @BeforeEach
     public void before() throws MalformedURLException {
@@ -23,7 +26,7 @@ public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
     }
 
     @Test
-    public void startAndStopStepsGroup() {
+    void startAndStopStepsGroup() {
         driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
@@ -40,7 +43,7 @@ public class StartStopStepsGroupAndroidTest extends AndroidTestBase {
     }
 
     @Test
-    public void multipleGroups() {
+    void multipleGroups() {
         driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");

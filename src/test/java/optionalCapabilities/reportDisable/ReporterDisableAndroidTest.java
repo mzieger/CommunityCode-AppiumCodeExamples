@@ -12,8 +12,11 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-
-public class ReporterDisableAndroidTest {
+/**
+ * 	Use this capability in order to choose if a report would be generated or not.
+ * 	When report.disable is set to true, no report will be generated after the session ended.
+ */
+class ReporterDisableAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();

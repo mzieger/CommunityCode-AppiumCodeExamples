@@ -10,7 +10,13 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class InstallAppAndroidTest extends AndroidTestBase {
+/**
+ * Install the application with given:
+ * 1. Name
+ * 2. Unique name
+ * 3. Build version or release version or both
+ */
+class InstallAppAndroidTest extends AndroidTestBase {
 
     private static final String APP_PACKAGE = "com.experitest.ExperiBank";
     private String APP_BUILD_VERSION = "<APPLICATION_BUILD_VERSION>";
@@ -28,21 +34,21 @@ public class InstallAppAndroidTest extends AndroidTestBase {
     }
 
     @Test
-    public void installAppByName() {
+    void installAppByName() {
         assertNotInstalled();
         driver.installApp("cloud:" + APP_PACKAGE);
         assertInstalled();
     }
 
     @Test
-    public void installAppByUniqueName() {
+    void installAppByUniqueName() {
         assertNotInstalled();
         driver.installApp("cloud:uniqueName=" + APP_UNIQUE_NAME);
         assertInstalled();
     }
 
     @Test
-    public void installAppByBuildVersion() {
+    void installAppByBuildVersion() {
         assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_PACKAGE +
@@ -51,7 +57,7 @@ public class InstallAppAndroidTest extends AndroidTestBase {
     }
 
     @Test
-    public void installAppByReleaseVersion() {
+    void installAppByReleaseVersion() {
         assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_PACKAGE +
@@ -61,7 +67,7 @@ public class InstallAppAndroidTest extends AndroidTestBase {
 
 
     @Test
-    public void installAppByReleaseVersionAndBuildVersion() {
+    void installAppByReleaseVersionAndBuildVersion() {
         assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_PACKAGE +

@@ -12,7 +12,7 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-public class AndroidQuickStartTest {
+class AndroidQuickStartTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
@@ -31,7 +31,7 @@ public class AndroidQuickStartTest {
     }
 
     @Test
-    public void runQuickStartAndroidNative() {
+    void runQuickStartAndroidNative() {
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/passwordTextField")).sendKeys("company");

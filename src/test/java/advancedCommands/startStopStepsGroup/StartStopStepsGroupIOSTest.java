@@ -10,7 +10,11 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 
-public class StartStopStepsGroupIOSTest extends IOSTestBase {
+/**
+ * StartStepsGroup begins a group marks (and StopStepsGroup ends it).
+ * All the steps that appear between those two steps will appear under the same group on the report.
+ */
+class StartStopStepsGroupIOSTest extends IOSTestBase {
 
 
     @BeforeEach
@@ -23,7 +27,7 @@ public class StartStopStepsGroupIOSTest extends IOSTestBase {
 
 
     @Test
-    public void startAndStopStepsGroup() {
+    void startAndStopStepsGroup() {
         driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.xpath("//*[@name='usernameTextField']")).sendKeys("company");
@@ -41,7 +45,7 @@ public class StartStopStepsGroupIOSTest extends IOSTestBase {
     }
 
     @Test
-    public void multipleGroups() {
+    void multipleGroups() {
         driver.executeScript("seetest:client.startStepsGroup", "login group");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.xpath("//*[@name='usernameTextField']")).sendKeys("company");

@@ -12,7 +12,7 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-public class IOSQuickStartTest {
+class IOSQuickStartTest {
 
     IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
@@ -30,7 +30,7 @@ public class IOSQuickStartTest {
     }
 
     @Test
-    public void runQuickStartIOSNative() {
+    void runQuickStartIOSNative() {
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.xpath("//*[@name='usernameTextField']")).sendKeys("company");
         driver.findElement(By.xpath("//*[@name='passwordTextField']")).sendKeys("company");

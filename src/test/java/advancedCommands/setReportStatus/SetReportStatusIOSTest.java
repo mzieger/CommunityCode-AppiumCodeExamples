@@ -8,7 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.jupiter.api.*;
 
-public class SetReportStatusIOSTest extends IOSTestBase {
+/**
+ * Overrides the final report status
+ */
+class SetReportStatusIOSTest extends IOSTestBase {
 
 
     @BeforeEach
@@ -20,18 +23,18 @@ public class SetReportStatusIOSTest extends IOSTestBase {
     }
 
     @Test
-    public void setPassed() {
+    void setPassed() {
         driver.executeScript("seetest:client.setReportStatus", "Passed", "passed-message");
     }
 
     @Test
-    public void setFailed() {
+    void setFailed() {
         driver.executeScript("seetest:client.setReportStatus", "Failed", "failed-message",
                 "failure-stacktrace");
     }
 
     @Test
-    public void setSkipped() {
+    void setSkipped() {
         driver.executeScript("seetest:client.setReportStatus", "Skipped", "skipped-message");
     }
 

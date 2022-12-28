@@ -10,8 +10,10 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.html5.Location;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-public class SetLocationIOSTest extends IOSTestBase {
+/**
+ * Set the current geo location
+ */
+class SetLocationIOSTest extends IOSTestBase {
 
 
     @BeforeEach
@@ -23,7 +25,7 @@ public class SetLocationIOSTest extends IOSTestBase {
 
 
     @Test
-    public void setLocation() {
+    void setLocation() {
         driver.launchApp();
         driver.setLocation(new Location(32, 24, 24));
         Location loc;
@@ -52,10 +54,5 @@ public class SetLocationIOSTest extends IOSTestBase {
         driver.findElementByXPath("//*[@label='Location Services']").click();
         driver.findElementByXPath("//*[@label='WebDriverAgentRunner-Runner']").click();
         driver.findElementByXPath("//*[@label='Always']").click();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
     }
 }

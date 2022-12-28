@@ -10,8 +10,13 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
-public class InstallAppIOSTest extends IOSTestBase {
+/**
+ * Install the application with given:
+ * 1. Bundle id
+ * 2. Unique name
+ * 3. Build version or release version or both
+ */
+class InstallAppIOSTest extends IOSTestBase {
 
     private static final String APP_NAME = "com.experitest.ExperiBank";
     private String APP_BUILD_VERSION = "<APPLICATION_BUILD_VERSION>";
@@ -27,21 +32,21 @@ public class InstallAppIOSTest extends IOSTestBase {
     }
 
     @Test
-    public void installAppByName() {
+    void installAppByName() {
         assertNotInstalled();
         driver.installApp("cloud:" + APP_NAME);
         assertInstalled();
     }
 
     @Test
-    public void installAppByUniqueName() {
+    void installAppByUniqueName() {
         assertNotInstalled();
         driver.installApp("cloud:uniqueName=" + APP_UNIQUE_NAME);
         assertInstalled();
     }
 
     @Test
-    public void installAppByBuildVersion() {
+    void installAppByBuildVersion() {
         assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_NAME +
@@ -50,7 +55,7 @@ public class InstallAppIOSTest extends IOSTestBase {
     }
 
     @Test
-    public void installAppByReleaseVersion() {
+    void installAppByReleaseVersion() {
         assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_NAME +
@@ -60,7 +65,7 @@ public class InstallAppIOSTest extends IOSTestBase {
 
 
     @Test
-    public void installAppByReleaseVersionAndBuildVersion() {
+    void installAppByReleaseVersionAndBuildVersion() {
         assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_NAME +

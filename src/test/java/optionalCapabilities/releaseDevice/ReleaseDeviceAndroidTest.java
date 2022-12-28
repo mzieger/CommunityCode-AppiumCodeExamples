@@ -11,8 +11,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-
-public class ReleaseDeviceAndroidTest {
+/**
+ * Gives the capability to not release a device after performing driver.quit();
+ * For that, set the capability 'releaseDevice' to false
+ */
+class ReleaseDeviceAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();

@@ -11,8 +11,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-
-public class ReleaseVersionIOSTest {
+/**
+ * Install/launch the app by release version
+ */
+class ReleaseVersionIOSTest {
 
     IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();

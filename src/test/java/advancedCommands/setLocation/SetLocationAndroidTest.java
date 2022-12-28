@@ -8,8 +8,10 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.html5.Location;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-public class SetLocationAndroidTest extends AndroidTestBase {
+/**
+ * Set the current geo location
+ */
+class SetLocationAndroidTest extends AndroidTestBase {
 
     @BeforeEach
     public void before() throws MalformedURLException {
@@ -18,12 +20,12 @@ public class SetLocationAndroidTest extends AndroidTestBase {
     }
 
     @Test
-    public void setLocation() {
+    void setLocation() {
         driver.setLocation(new Location(32, 24, 24));
         Location loc = driver.location();
 
-        assertEquals(loc.getLatitude(), 32);
-        assertEquals(loc.getLongitude(), 24);
+        assertEquals(32, loc.getLatitude());
+        assertEquals(24, loc.getLongitude());
     }
 
 }

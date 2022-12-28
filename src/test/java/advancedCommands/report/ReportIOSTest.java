@@ -8,8 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.jupiter.api.*;
 
-
-public class ReportIOSTest extends IOSTestBase {
+/**
+ * Adds a step to the generated report
+ */
+class ReportIOSTest extends IOSTestBase {
 
     @BeforeEach
     public void before() throws MalformedURLException {
@@ -20,12 +22,12 @@ public class ReportIOSTest extends IOSTestBase {
     }
 
     @Test
-    public void addPassedStep() {
+    void addPassedStep() {
         driver.executeScript("seetest:client.report", "step should be passed", "true");
     }
 
     @Test
-    public void addFailedStep() {
+    void addFailedStep() {
         driver.executeScript("seetest:client.report", "step should be failed", "false");
     }
 

@@ -12,7 +12,10 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-public class ReleaseVersionAndroidTest {
+/**
+ * Install/launch the app by release version
+ */
+class ReleaseVersionAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();

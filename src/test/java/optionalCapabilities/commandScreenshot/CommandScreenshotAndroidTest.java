@@ -11,7 +11,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class CommandScreenshotAndroidTest {
+/**
+ * In Video Report - will take a screenshot also before and after every action
+ * when commandScreenshot capability set to true.
+ */
+class CommandScreenshotAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
