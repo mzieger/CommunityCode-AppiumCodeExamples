@@ -1,23 +1,35 @@
 package advancedCommands.setLocation;
 
-import advancedCommands.IOSTestBase;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.IOSElement;
+import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.html5.Location;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Set the current geo location
  */
-class SetLocationIOSTest extends IOSTestBase {
+class SetLocationIOSTest {
+
+
+    IOSDriver<IOSElement> driver = null;
+    DesiredCapabilities dc = new DesiredCapabilities();
+    String CLOUD_URL = "<CLOUD_URL>";
 
 
     @BeforeEach
     public void before() throws MalformedURLException {
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("deviceQuery", "@os='ios'");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         dc.setCapability("testName", "Set location test on iOS device");
         dc.setCapability("bundleId", "com.apple.Preferences");
         driver = new IOSDriver<>(new URL(CLOUD_URL), dc);
@@ -55,4 +67,10 @@ class SetLocationIOSTest extends IOSTestBase {
         driver.findElementByXPath("//*[@label='WebDriverAgentRunner-Runner']").click();
         driver.findElementByXPath("//*[@label='Always']").click();
     }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
+
 }
