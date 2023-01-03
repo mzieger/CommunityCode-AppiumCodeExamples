@@ -1,4 +1,4 @@
-package quickStartTests;
+package optionalCapabilities.reportDisable;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -12,18 +12,23 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-class AndroidQuickStartTest {
+/**
+ * 	Use this capability in order to choose if a report would be generated or not.
+ * 	When report.disable is set to true, no report will be generated after the session ended.
+ */
+class ReporterDisableAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
+
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
         dc.setCapability("accessKey", "<ACCESS_KEY>");
         dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
-        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
-        dc.setCapability("testName", "Run Quickstart test on Android device");
+        dc.setCapability("report.disable", true);
+        dc.setCapability("testName", "Report disable test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
@@ -31,18 +36,11 @@ class AndroidQuickStartTest {
     }
 
     @Test
-    void runQuickStartAndroidNative() {
+    void runTestWithReportDisableTrue() {
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/passwordTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/loginButton")).click();
-        driver.findElement(By.id("com.experitest.ExperiBank:id/makePaymentButton")).click();
-        driver.findElement(By.id("com.experitest.ExperiBank:id/phoneTextField")).sendKeys("0501234567");
-        driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).sendKeys("John Snow");
-        driver.findElement(By.id("com.experitest.ExperiBank:id/amountTextField")).sendKeys("50");
-        driver.findElement(By.id("com.experitest.ExperiBank:id/countryTextField")).sendKeys("'Switzerland'");
-        driver.findElement(By.id("com.experitest.ExperiBank:id/sendPaymentButton")).click();
-        driver.findElement(By.id("android:id/button1")).click();
     }
 
     @AfterEach
