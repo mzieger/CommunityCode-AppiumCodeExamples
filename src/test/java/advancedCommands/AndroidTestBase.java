@@ -11,7 +11,7 @@ public class AndroidTestBase {
 
     protected AndroidDriver<AndroidElement> driver = null;
     protected DesiredCapabilities dc = new DesiredCapabilities();
-    protected String CLOUD_URL = "<CLOUD_URL>";
+    protected String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
 
 
     @BeforeEach
