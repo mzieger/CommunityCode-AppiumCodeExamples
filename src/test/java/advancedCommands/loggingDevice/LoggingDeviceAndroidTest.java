@@ -26,7 +26,8 @@ class LoggingDeviceAndroidTest extends AndroidTestBase {
 
     @Test
     void performLoggingDevice() {
-        driver.executeScript("seetest:client.startLoggingDevice",  "cloud:<FILE_UNIQUE_NAME>");
+        // File with unique name <FILE_UNIQUE_NAME> must not exist in file repository
+        driver.executeScript("seetest:client.startLoggingDevice",  "cloud:<FILE_UNIQUE_NAME>.log");
         driver.rotate(ScreenOrientation.PORTRAIT);
         driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
         driver.findElement(By.id("com.experitest.ExperiBank:id/passwordTextField")).sendKeys("company");

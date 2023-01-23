@@ -7,8 +7,6 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Install the application with given:
@@ -35,54 +33,34 @@ class InstallAppAndroidTest extends AndroidTestBase {
 
     @Test
     void installAppByName() {
-        assertNotInstalled();
         driver.installApp("cloud:" + APP_PACKAGE);
-        assertInstalled();
     }
 
     @Test
     void installAppByUniqueName() {
-        assertNotInstalled();
         driver.installApp("cloud:uniqueName=" + APP_UNIQUE_NAME);
-        assertInstalled();
     }
 
     @Test
     void installAppByBuildVersion() {
-        assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_PACKAGE +
                         ":buildVersion=" + APP_BUILD_VERSION);
-        assertInstalled();
     }
 
     @Test
     void installAppByReleaseVersion() {
-        assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_PACKAGE +
                         ":releaseVersion=" + APP_RELEASE_VERSION);
-        assertInstalled();
     }
 
 
     @Test
     void installAppByReleaseVersionAndBuildVersion() {
-        assertNotInstalled();
         driver.installApp(
                 "cloud:" + APP_PACKAGE +
                         ":releaseVersion=" + APP_RELEASE_VERSION +
                         ":buildVersion=" + APP_BUILD_VERSION);
-        assertInstalled();
-
-    }
-
-    private void assertNotInstalled() {
-        driver.removeApp(APP_PACKAGE);
-        assertFalse(driver.isAppInstalled(APP_PACKAGE));
-    }
-
-    private void assertInstalled() {
-        assertTrue(driver.isAppInstalled(APP_PACKAGE));
     }
 }

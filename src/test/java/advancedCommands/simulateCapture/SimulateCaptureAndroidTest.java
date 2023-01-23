@@ -14,7 +14,8 @@ import org.openqa.selenium.NoSuchElementException;
 /**
  * The command allows users to test applications that use the camera on a mobile device.
  * The command injects an image file to the camera preview screen.
- * The command can run using file with unique name in file repository or with file URL
+ * The command can run using file with unique name in file repository or with file URL.
+ * Note: The application must be installed with simulate capture support
  */
 class SimulateCaptureAndroidTest extends AndroidTestBase {
 
@@ -42,6 +43,7 @@ class SimulateCaptureAndroidTest extends AndroidTestBase {
         if (fromURL) {
             driver.executeScript("seetest:client.simulateCapture", "<FILE_URL>");
         } else {
+            // File with unique name <FILE_UNIQUE_NAME> must exist in file repository
             driver.executeScript("seetest:client.simulateCapture", "cloud:<FILE_UNIQUE_NAME>");
         }
         Thread.sleep(5000); // time to wait until the image will be shown

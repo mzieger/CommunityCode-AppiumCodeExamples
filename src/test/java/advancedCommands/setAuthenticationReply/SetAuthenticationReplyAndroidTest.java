@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Simulates different authentication responses on applications that request a user fingerprint authentication.
  * This method allows setting the desired response type for later authentication requests.
+ * Note: The application must be installed with fingerprint support.
  */
 class SetAuthenticationReplyAndroidTest extends AndroidTestBase {
 
