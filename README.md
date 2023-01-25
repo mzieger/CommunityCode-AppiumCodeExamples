@@ -4,7 +4,7 @@ Java-Appium project for native applications.
 ## **Notes**
 * The tests are running on two applications: Eribank and UIcatalog. Therefore, make sure that you have these apps\
 in your cloud.
-* Between different application versions can be changes in xpaths. If one the test is failing on xpath,\
+* Between different application versions can be changes in xpaths. If one of the test is failing on xpath,\
 you should change it to the correct one.
 
 
@@ -27,7 +27,7 @@ Use these examples or change them according to your needs.
          Except the mandatory capabilities, we can set the following optional capabilities:
          
          - buildVersion: Install/launch the app by build version.
-         - commandScreenshot: In video report - will take a screenshot also before and after every action when commandScreenshot capability set to true.
+         - commandScreenshot: In video report - will take a screenshot before and after every action when commandScreenshot capability set to true.
          - doNotGoHomeOnQuit: The device will remain in the last left state even after ending the test when dontGoHomeOnQuit capability set to true.
          - installOnlyForUpdate: Re-installs app only if an older version already installed on the device.
          - releaseDevice: Gives the capability to not release a device after performing driver.quit().
