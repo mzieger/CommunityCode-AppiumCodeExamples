@@ -1,8 +1,8 @@
 package advancedCommands.simulateCapture;
 
-import advancedCommands.AndroidTestBase;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
@@ -10,6 +10,7 @@ import java.net.URL;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * The command allows users to test applications that use the camera on a mobile device.
@@ -17,10 +18,18 @@ import org.openqa.selenium.NoSuchElementException;
  * The command can run using file with unique name in file repository or with file URL.
  * Note: The application must be installed with simulate capture support
  */
-class SimulateCaptureAndroidTest extends AndroidTestBase {
+class SimulateCaptureAndroidTest {
+
+    AndroidDriver<AndroidElement> driver = null;
+    DesiredCapabilities dc = new DesiredCapabilities();
+    String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
 
     @BeforeEach
     public void before() throws MalformedURLException {
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("deviceQuery", "@os='android'");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
         dc.setCapability("testName", "Run simulate capture test on Android device");
         dc.setCapability("autoGrantPermissions", true);
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.uicatalog/.MainActivity");
@@ -59,5 +68,11 @@ class SimulateCaptureAndroidTest extends AndroidTestBase {
     void simulateCaptureFromFileRepository() throws Exception {
      runSimulateCapture(false);
     }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
+
 
 }

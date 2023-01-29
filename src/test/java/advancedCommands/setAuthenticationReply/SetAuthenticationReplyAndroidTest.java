@@ -1,8 +1,8 @@
 package advancedCommands.setAuthenticationReply;
 
-import advancedCommands.AndroidTestBase;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
@@ -10,6 +10,7 @@ import java.net.URL;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -17,10 +18,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * This method allows setting the desired response type for later authentication requests.
  * Note: The application must be installed with fingerprint support.
  */
-class SetAuthenticationReplyAndroidTest extends AndroidTestBase {
+class SetAuthenticationReplyAndroidTest {
+
+    AndroidDriver<AndroidElement> driver = null;
+    DesiredCapabilities dc = new DesiredCapabilities();
+    String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
 
     @BeforeEach
     public void before() throws MalformedURLException {
+        dc.setCapability("accessKey", "<ACCESS_KEY>");
+        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("deviceQuery", "@os='android'");
+        dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
         dc.setCapability("testName", "Set authentication reply test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.uicatalog/.MainActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.uicatalog");
@@ -44,4 +53,10 @@ class SetAuthenticationReplyAndroidTest extends AndroidTestBase {
         boolean fingerprintRecognizedIsDisplay = element.getText().contains("Fingerprint recognized");
         assertTrue(fingerprintRecognizedIsDisplay);
     }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
+
 }
