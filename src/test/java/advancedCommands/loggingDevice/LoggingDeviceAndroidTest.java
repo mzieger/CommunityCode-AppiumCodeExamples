@@ -1,4 +1,4 @@
-package advancedCommands.report;
+package advancedCommands.loggingDevice;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -7,17 +7,18 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * Adds a step to the generated report
+ * StartLoggingDevice and StopLoggingDevice commands are used to start and stop device log will be written to the path provided by the user.
  */
-class ReportAndroidTest {
+class LoggingDeviceAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
     String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
-
 
     @BeforeEach
     public void before() throws MalformedURLException {
@@ -25,24 +26,23 @@ class ReportAndroidTest {
         dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
-        dc.setCapability("testName", "Report test on Android device");
+        dc.setCapability("testName", "Logging device test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
         driver = new AndroidDriver<>(new URL(CLOUD_URL), dc);
     }
 
-
     @Test
-    void addPassedStep() {
-        driver.executeScript("seetest:client.report", "step should be passed", "true");
+    void performLoggingDevice() {
+        // File with unique name <FILE_UNIQUE_NAME> must not exist in file repository
+        driver.executeScript("seetest:client.startLoggingDevice",  "cloud:<FILE_UNIQUE_NAME>.log");
+        driver.rotate(ScreenOrientation.PORTRAIT);
+        driver.findElement(By.id("com.experitest.ExperiBank:id/usernameTextField")).sendKeys("company");
+        driver.findElement(By.id("com.experitest.ExperiBank:id/passwordTextField")).sendKeys("company");
+        driver.findElement(By.id("com.experitest.ExperiBank:id/loginButton")).click();
+        driver.executeScript("seetest:client.stopLoggingDevice");
     }
-
-    @Test
-    void addFailedStep() {
-        driver.executeScript("seetest:client.report", "step should be failed", "false");
-    }
-
 
     @AfterEach
     public void tearDown() {

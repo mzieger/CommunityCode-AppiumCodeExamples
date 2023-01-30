@@ -21,7 +21,7 @@ class SetLocationIOSTest {
 
     IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String CLOUD_URL = "<CLOUD_URL>";
+    String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
 
 
     @BeforeEach
