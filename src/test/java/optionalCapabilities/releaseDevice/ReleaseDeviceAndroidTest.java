@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+
 /**
  * Gives the capability to not release a device after performing driver.quit();
  * For that, set the capability 'releaseDevice' to false
