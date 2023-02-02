@@ -17,7 +17,7 @@ by making the desired changes in the test. The ios tests examples in the project
 Use these examples or change them according to your needs.
 
 ## **Project structure**
-###Package & Classes details:
+### Package & Classes details:
 
 #### 1. QuickstartTests: this package includes basic tests for android and ios.
         Some basic appium commands are present in this package like click(), findElement(), sendKeys() etc.
