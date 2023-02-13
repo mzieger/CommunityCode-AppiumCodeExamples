@@ -33,7 +33,7 @@ class SendKeysWithBTAndroidTest {
     }
 
     @Test
-    void sendKeiWithBT()  {
+    void sendKeyWithBT()  {
         driver.executeScript("seetest:client.sendKeysWithBT", "" + Keys.CONTROL+ Keys.ALT + "I");
     }
 

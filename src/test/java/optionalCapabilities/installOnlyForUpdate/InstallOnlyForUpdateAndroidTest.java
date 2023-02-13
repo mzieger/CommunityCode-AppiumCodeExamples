@@ -12,8 +12,10 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * Re-installs app only if an older version already installed on the device
- * Recommend to add build or release version to the application name
+ * Install the application only if the desired version is different from the application version on the device (or if the app does not exist on the device).
+ * Otherwise, keep the application on the device.
+ * The following desired capability must also be specified if using this feature: appBuildVersion,
+ * appReleaseVersion, 'bundleId' for iOS only, 'appPackage' and 'appActivity' for Android only.
  */
 class InstallOnlyForUpdateAndroidTest {
 
