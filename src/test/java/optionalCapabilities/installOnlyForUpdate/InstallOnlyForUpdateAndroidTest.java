@@ -14,8 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 /**
  * Install the application only if the desired version is different from the application version on the device (or if the app does not exist on the device).
  * Otherwise, keep the application on the device.
- * The following desired capability must also be specified if using this feature: appBuildVersion,
- * appReleaseVersion, 'bundleId' for iOS only, 'appPackage' and 'appActivity' for Android only.
+ * At least one of the following desired capabilities must also be specified if using this feature: appBuildVersion or appReleaseVersion.
  */
 class InstallOnlyForUpdateAndroidTest {
 
