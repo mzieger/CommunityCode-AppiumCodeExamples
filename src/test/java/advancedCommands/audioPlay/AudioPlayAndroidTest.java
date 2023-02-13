@@ -23,6 +23,7 @@ class AudioPlayAndroidTest {
         dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
+        dc.setCapability("instrumentApp", true);
         dc.setCapability("testName", "Performance audio play test on Android device");
         driver = new AndroidDriver<>(new URL(CLOUD_URL), dc);
     }

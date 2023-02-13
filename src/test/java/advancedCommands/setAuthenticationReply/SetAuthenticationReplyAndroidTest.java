@@ -30,6 +30,7 @@ class SetAuthenticationReplyAndroidTest {
         dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
+        dc.setCapability("instrumentApp", true);
         dc.setCapability("testName", "Set authentication reply test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.uicatalog/.MainActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.uicatalog");

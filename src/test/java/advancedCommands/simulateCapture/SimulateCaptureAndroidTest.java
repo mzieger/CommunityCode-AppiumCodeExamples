@@ -32,6 +32,7 @@ class SimulateCaptureAndroidTest {
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
         dc.setCapability("testName", "Run simulate capture test on Android device");
         dc.setCapability("autoGrantPermissions", true);
+        dc.setCapability("instrumentApp", true);
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.uicatalog/.MainActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.uicatalog");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".MainActivity");
