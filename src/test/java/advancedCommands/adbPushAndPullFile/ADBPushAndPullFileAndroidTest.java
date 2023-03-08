@@ -16,13 +16,16 @@ class ADBPushAndPullFileAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
-    String devicePath = "<DEVICE_PATH>"; // for example, devicePath = "/sdcard/DCIM/Camera/hello/myPic.PNG"
+    final String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
+    final String ACCESS_KEY = "<ACCESS_KEY>";
+    final String APPIUM_VERSION = "<APPIUM_VERSION>";
+    String DEVICE_PATH = "<DEVICE_PATH>"; // for example, devicePath = "/sdcard/DCIM/Camera/hello/myPic.PNG"
+
 
     @BeforeEach
     public void before() throws MalformedURLException {
-        dc.setCapability("accessKey", "<ACCESS_KEY>");
-        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("accessKey", ACCESS_KEY);
+        dc.setCapability("appiumVersion", APPIUM_VERSION);
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
         dc.setCapability("testName", "ADB push and pull file test on Android device");
@@ -34,14 +37,14 @@ class ADBPushAndPullFileAndroidTest {
     void performPushFile() {
         // File with unique name <FILE_UNIQUE_NAME> must exist in file repository
         // File from repository will be uploaded to provided path on device.
-        driver.executeScript("seetest:client.pushFile", devicePath, "cloud:<FILE_UNIQUE_NAME>");
+        driver.executeScript("seetest:client.pushFile", DEVICE_PATH, "cloud:<FILE_UNIQUE_NAME>");
     }
 
     @Test
     void performPullFile() {
         // File with unique name <FILE_UNIQUE_NAME> must NOT exist in file repository
         // File downloaded from device will be stored in file repository with given unique name.
-        driver.executeScript("seetest:client.pullFile", devicePath, "cloud:<FILE_UNIQUE_NAME>");
+        driver.executeScript("seetest:client.pullFile", DEVICE_PATH, "cloud:<FILE_UNIQUE_NAME>");
     }
 
     @AfterEach

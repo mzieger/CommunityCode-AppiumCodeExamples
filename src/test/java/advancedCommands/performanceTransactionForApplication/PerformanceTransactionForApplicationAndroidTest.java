@@ -20,12 +20,14 @@ class PerformanceTransactionForApplicationAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
+    final String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
+    final String ACCESS_KEY = "<ACCESS_KEY>";
+    final String APPIUM_VERSION = "<APPIUM_VERSION>";
 
     @BeforeEach
     public void before() throws MalformedURLException {
-        dc.setCapability("accessKey", "<ACCESS_KEY>");
-        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("accessKey", ACCESS_KEY);
+        dc.setCapability("appiumVersion", APPIUM_VERSION);
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
         dc.setCapability("instrumentApp", true);
