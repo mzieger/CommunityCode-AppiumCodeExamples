@@ -16,17 +16,20 @@ class IOSQuickStartTest {
 
     IOSDriver<IOSElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
+    final String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
+    final String ACCESS_KEY = "<ACCESS_KEY>";
+    final String APPIUM_VERSION = "<APPIUM_VERSION>";
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        dc.setCapability("accessKey", "<ACCESS_KEY>");
-        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("accessKey", ACCESS_KEY);
+        dc.setCapability("appiumVersion", APPIUM_VERSION);
         dc.setCapability("deviceQuery", "@os='ios'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
         dc.setCapability("testName", "Run Quickstart test on iOS device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank");
         dc.setCapability(IOSMobileCapabilityType.BUNDLE_ID, "com.experitest.ExperiBank");
-        driver = new IOSDriver<>(new URL("<CLOUD_URL>" + "/wd/hub"), dc);
+        driver = new IOSDriver<>(new URL(CLOUD_URL), dc);
     }
 
     @Test

@@ -19,18 +19,21 @@ class DoNotGoHomeOnQuitAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
+    final String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
+    final String ACCESS_KEY = "<ACCESS_KEY>";
+    final String APPIUM_VERSION = "<APPIUM_VERSION>";
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
-        dc.setCapability("accessKey", "<ACCESS_KEY>");
-        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("accessKey", ACCESS_KEY);
+        dc.setCapability("appiumVersion", APPIUM_VERSION);
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability("dontGoHomeOnQuit", true);
         dc.setCapability("testName", "DontGoHomeOnQuit test on Android device");
         dc.setCapability(MobileCapabilityType.APP, "cloud:com.experitest.ExperiBank/.LoginActivity");
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.experitest.ExperiBank");
         dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".LoginActivity");
-        driver = new AndroidDriver<>(new URL("<CLOUD_URL>" + "/wd/hub"), dc);
+        driver = new AndroidDriver<>(new URL(CLOUD_URL), dc);
     }
 
     @Test

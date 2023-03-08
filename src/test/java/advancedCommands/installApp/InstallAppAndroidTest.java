@@ -19,17 +19,19 @@ class InstallAppAndroidTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
-    String APP_BUILD_VERSION = "<APPLICATION_BUILD_VERSION>";
-    String APP_RELEASE_VERSION = "<APPLICATION_RELEASE_VERSION>";
-    String APP_UNIQUE_NAME = "<APPLICATION_UNIQUE_NAME>";
+    final String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
+    final String ACCESS_KEY = "<ACCESS_KEY>";
+    final String APPIUM_VERSION = "<APPIUM_VERSION>";
+    final String APP_BUILD_VERSION = "<APPLICATION_BUILD_VERSION>";
+    final String APP_RELEASE_VERSION = "<APPLICATION_RELEASE_VERSION>";
+    final String APP_UNIQUE_NAME = "<APPLICATION_UNIQUE_NAME>";
     static final String APP_PACKAGE = "com.experitest.ExperiBank";
 
 
     @BeforeEach
     public void before() throws MalformedURLException {
-        dc.setCapability("accessKey", "<ACCESS_KEY>");
-        dc.setCapability("appiumVersion", "<APPIUM_VERSION>");
+        dc.setCapability("accessKey", ACCESS_KEY);
+        dc.setCapability("appiumVersion", APPIUM_VERSION);
         dc.setCapability("deviceQuery", "@os='android'");
         dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,  "UiAutomator2");
         dc.setCapability("testName", "Install application test on Android device");
