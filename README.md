@@ -47,3 +47,10 @@ Most commands and capabilities have two implementations: one for Android and the
          - simulateCapture: The command allows users to test applications that use the camera on a mobile device.
                             The command injects an image file to the camera preview screen.
          - startStopStepsGroup: startStepsGroup begins a group marks (and stopStepsGroup ends it).
+
+
+## Documentation
+To find out more about CT usage, features and best practices, visit our online [documentation](https://docs.experitest.com/display/TE/Test+Execution+Home)
+
+## Support
+If you've encountered an issue that is not covered here or in our online documentation, contact us at [support@digital.ai](mailto:support@digital.ai)
