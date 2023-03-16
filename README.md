@@ -9,12 +9,8 @@ you should change it to the correct one.
 
 
 ## **Android and iOS testing**
-In this project we focus mostly on android tests. All the commands and capabilities can be used on ios platform\
-by making the desired changes in the test. The ios tests examples in the project are:
-* [quickstarttests/iosquickstarttest.java](src/test/java/quickStartTests/IOSQuickStartTest.java)
-* [advancedcommands/setlocation/setlocationiostest.java](src/test/java/advancedCommands/setLocation/SetLocationIOSTest.java)
-  
-Use these examples or change them according to your needs.
+Most commands and capabilities have two implementations: one for Android and the other for IOS.
+
 
 ## **Project structure**
 ### Package & Classes details:
@@ -51,3 +47,10 @@ Use these examples or change them according to your needs.
          - simulateCapture: The command allows users to test applications that use the camera on a mobile device.
                             The command injects an image file to the camera preview screen.
          - startStopStepsGroup: startStepsGroup begins a group marks (and stopStepsGroup ends it).
+
+
+## Documentation
+To find out more about CT usage, features and best practices, visit our online [documentation](https://docs.experitest.com/display/TE/Test+Execution+Home)
+
+## Support
+If you've encountered an issue that is not covered here or in our online documentation, contact us at [support@digital.ai](mailto:support@digital.ai)
