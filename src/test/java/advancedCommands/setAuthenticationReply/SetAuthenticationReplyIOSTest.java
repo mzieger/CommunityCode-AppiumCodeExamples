@@ -46,7 +46,7 @@ class SetAuthenticationReplyIOSTest {
         final HashMap<String, String> scrollObject = new HashMap<>();
         scrollObject.put("direction", "down");
         try {
-            driver.executeScript("mobile:scroll", scrollObject); // swipe faster then scroll
+            driver.executeScript("mobile:scroll", scrollObject);
             Thread.sleep(2000); // always allow swipe action to complete
         } catch (Exception e) {
             fail("mobileScrollIOS(): FAILED\n" + e.getMessage());
