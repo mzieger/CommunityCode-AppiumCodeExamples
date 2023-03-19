@@ -15,12 +15,10 @@ Most commands and capabilities have two implementations: one for Android and the
 ## **Project structure**
 ### Package & Classes details:
 
-- QuickstartTests: This package includes basic tests for android and ios. Some basic appium commands are present in this package such as click(), findElement(), ND sendKeys().
+- QuickstartTests: This package includes basic tests for Android and ios. Some basic appium commands are present in this package such as click(), findElement(), and sendKeys().
 
 
-- OptionalCapabilities: This package uses optional capabilities that can be used to run the Appium test.
-         Except the mandatory capabilities, we can set the following optional capabilities:
-         
+- OptionalCapabilities: This package uses optional capabilities that can be used to run the Appium test. Aside from the mandatory capabilities, you can set the following optional capabilities:
     - buildVersion: Install/launch the app by build version.
     - commandScreenshot: In video report, take a screenshot before and after every action when commandScreenshot is set to true.
     - doNotGoHomeOnQuit: Device remains in the last state even after ending the test when dontGoHomeOnQuit is set to true.
@@ -30,7 +28,7 @@ Most commands and capabilities have two implementations: one for Android and the
     - reportDisable: Do not generate a report.
 
 
-- AdvancedCommands: These are special commands using the executeScript command.  Each package includes the Android test example:
+- AdvancedCommands: These are special commands using the executeScript command. 
   - adbPushFile: Perform the ADB push file to device command.
   - adbPullFile: Perform the ADB pull file from device command.
   - audioPlay: Play an audio file.
