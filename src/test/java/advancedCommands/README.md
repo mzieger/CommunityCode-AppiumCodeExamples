@@ -1,12 +1,12 @@
-## **Advanced commands**
-Some tests in this package are using files from the file repository.\
-Replace '<FILE_UNIQUE_NAME>' with your own file unique name. Use File Repository Rest API to download\upload the file.\
-  For more details go to the following link: https://docs.experitest.com/display/PM/File+Repository+Rest+API\
+# **Advanced Commands**
+Some tests in this package use files from the file repository. 
+Replace <FILE_UNIQUE_NAME> with your own unique file. Use the File Repository Rest API to download and upload the file. 
+  For more details see [File Repository Rest API](https://docs.experitest.com/display/PM/File+Repository+Rest+API).
 
-### **Audio recording and playing**
-Follow the links for be able to record and play audio in the device:
-* https://docs.experitest.com/pages/viewpage.action?spaceKey=COM&title=Audio+and+Screen-readers+Support+using+Bluetooth+Adapter
-* https://docs.experitest.com/display/LT/Mobile+Studio+-+Audio
+# **Audio Recording and Playing**
+For more information on recording and playing audio on the device, see the following:
+* [Audio and Screen Readers](https://docs.experitest.com/pages/viewpage.action?spaceKey=COM&title=Audio+and+Screen-readers+Support+using+Bluetooth+Adapter)
+* [Modile Studio - Audio](https://docs.experitest.com/display/LT/Mobile+Studio+-+Audio)
 
 
 
