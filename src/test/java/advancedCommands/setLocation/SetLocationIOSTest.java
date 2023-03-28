@@ -5,6 +5,7 @@ import io.appium.java_client.ios.IOSElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriverException;
@@ -61,9 +62,10 @@ class SetLocationIOSTest {
     }
 
     private void configureIosLocationPermission() {
-        driver.executeScript("mobile: scroll", Map.of(
-                "direction", "down",
-                "label", "Privacy"));
+        Map<String, String> configMap = new HashMap<>();
+        configMap.put("direction", "down");
+        configMap.put("label", "Privacy");
+        driver.executeScript("mobile: scroll", configMap);
         driver.findElementByXPath("//*[@label='Privacy']").click();
         driver.findElementByXPath("//*[@label='Location Services']").click();
         driver.findElementByXPath("//*[@label='WebDriverAgentRunner-Runner']").click();
