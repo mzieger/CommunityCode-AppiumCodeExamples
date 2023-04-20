@@ -1,0 +1,1 @@
+For more information about this command, see [setAuthenticationReply](https://docs.experitest.com/display/TET/SeeTest+Client++-+SetAuthenticationReply%28Reply%2C+Delay%29+-+TouchID).

@@ -14,9 +14,9 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * Start Performance Transaction collects data on Duration, CPU, Battery, Memory of the specified application on the device.
- * The Network traffic will be measured for the device, and not per application.
- * The command must be used with the following EndPerformanceTransaction
+ * Start Performance Transaction collects data on duration, CPU, battery, and memory used by the specified application on the device.
+ * Network traffic is measured for the device, and not per application.
+ * You must use EndPerformanceTransaction after using this command.
  */
 class PerformanceTransactionForApplicationIOSTest {
 

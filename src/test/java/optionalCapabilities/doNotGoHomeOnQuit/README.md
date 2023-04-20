@@ -1,0 +1,1 @@
+For more information about this capability, see [Supported Extended Capabilities](https://docs.experitest.com/display/TE/Appium+Server+%28OSS%29+-+Supported+Extended+Capabilities).

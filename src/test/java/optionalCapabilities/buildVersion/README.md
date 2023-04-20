@@ -1,0 +1,1 @@
+For more information about this capability, see [Application Setup](https://docs.experitest.com/display/TE/Application+Setup).

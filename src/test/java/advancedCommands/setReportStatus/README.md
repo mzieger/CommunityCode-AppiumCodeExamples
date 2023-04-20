@@ -1,0 +1,1 @@
+For more information about this command, see [setReportStatus](https://docs.experitest.com/display/TE/SeeTest+Client+-+setReportStatus).

@@ -1,0 +1,1 @@
+For more information about this capability, see [Automated Test Reports](https://docs.experitest.com/display/TE/Automated+Test+Reports).

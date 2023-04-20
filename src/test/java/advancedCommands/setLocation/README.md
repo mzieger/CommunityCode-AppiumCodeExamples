@@ -1,0 +1,1 @@
+For more infromation about this command, see [SetLocation](https://docs.experitest.com/display/TE/SetLocation).

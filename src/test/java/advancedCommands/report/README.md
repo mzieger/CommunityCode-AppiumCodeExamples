@@ -1,0 +1,1 @@
+For more information about this command, see [report](https://docs.experitest.com/display/TE/SeeTest+Client+-+Report).

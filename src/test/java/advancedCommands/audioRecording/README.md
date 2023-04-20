@@ -1,0 +1,1 @@
+For more information about these commands, see [StartAudioRecording](https://docs.experitest.com/display/TE/SeeTest+Client+-+StartAudioRecording) and [stopAudioRecording](https://docs.experitest.com/display/TE/SeeTest+Client+-+StopAudioRecording).

@@ -1,0 +1,1 @@
+For more information about these commands, see [StartLoggingDevice](https://docs.experitest.com/display/TET/SeeTest+Client+-+StartLoggingDevice) and [StopLoggingDevice](https://docs.experitest.com/display/TET/SeeTest+Client+-+StopLoggingDevice).

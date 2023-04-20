@@ -12,7 +12,7 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * StartLoggingDevice and StopLoggingDevice commands are used to start and stop device log will be written to the path provided by the user.
+ * StartLoggingDevice and StopLoggingDevice commands are used to start and stop the device log. It is written to the path provided by the user.
  */
 class LoggingDeviceAndroidTest {
 

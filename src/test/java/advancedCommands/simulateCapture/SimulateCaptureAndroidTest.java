@@ -15,8 +15,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 /**
  * The command allows users to test applications that use the camera on a mobile device.
  * The command injects an image file to the camera preview screen.
- * The command can run using file with unique name in file repository or with file URL.
- * Note: The application must be installed with simulate capture support
+ * The command can run using file with a unique name in file repository or with a file URL.
+ * Note: The application must be installed with simulate capture support.
  */
 class SimulateCaptureAndroidTest {
 

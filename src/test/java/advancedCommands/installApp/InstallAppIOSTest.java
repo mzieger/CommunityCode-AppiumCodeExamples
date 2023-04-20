@@ -12,10 +12,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * Install the application with given:
- * 1. Name
- * 2. Unique name
- * 3. Build version or release version or both
+ Install the application when given:
+ * Name
+ * Unique name
+ * Build version or release version or both
  */
 class InstallAppIOSTest {
 
