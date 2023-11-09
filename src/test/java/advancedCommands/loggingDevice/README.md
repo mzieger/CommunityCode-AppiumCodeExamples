@@ -1,1 +1,1 @@
-For more information about these commands, see [StartLoggingDevice](https://docs.experitest.com/display/TET/SeeTest+Client+-+StartLoggingDevice) and [StopLoggingDevice](https://docs.experitest.com/display/TET/SeeTest+Client+-+StopLoggingDevice).
+For more information about these commands, see [StartLoggingDevice](https://docs.digital.ai/bundle/TE/page/startloggingdevice.html) and [StopLoggingDevice](https://docs.digital.ai/bundle/TE/page/stoploggingdevice.html).

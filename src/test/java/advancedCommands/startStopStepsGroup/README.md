@@ -1,3 +1,1 @@
-For more information about these commands, see the following:
-* [StartStepsGroup](https://docs.experitest.com/display/TE/SeeTest+Client+-+StartStepsGroup)
-* [StopStepsGroup](https://docs.experitest.com/display/TE/SeeTest+Client+-+StopStepsGroup)
+For more information about these commands, see [Report Grouping Commands](https://docs.digital.ai/bundle/TE/page/report_grouping_commands.html).

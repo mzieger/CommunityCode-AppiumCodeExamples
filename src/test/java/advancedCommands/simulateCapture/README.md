@@ -1,1 +1,1 @@
-For more information about this command, see [simulateCapture](https://docs.experitest.com/display/TE/SeeTest+Client+-+SimulateCapture).
+For more information about this command, see [simulateCapture](https://docs.digital.ai/bundle/TE/page/simulatecapture.html).

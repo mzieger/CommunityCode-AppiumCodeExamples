@@ -1,1 +1,1 @@
-For more information about this command, see [Install](https://docs.experitest.com/display/TE/SeeTest+Client++-+Install).
+For more information about this command, see [Install](https://docs.digital.ai/bundle/TE/page/install.html).

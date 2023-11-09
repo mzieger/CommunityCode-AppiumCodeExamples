@@ -1,1 +1,1 @@
-For more information about this command, see [report](https://docs.experitest.com/display/TE/SeeTest+Client+-+Report).
+For more information about this command, see [report](https://docs.digital.ai/bundle/TE/page/report.html).
