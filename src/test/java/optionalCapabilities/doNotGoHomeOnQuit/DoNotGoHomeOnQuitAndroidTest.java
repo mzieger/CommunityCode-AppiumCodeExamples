@@ -12,8 +12,8 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * The device will remain in the last left state even after ending the test
- * when dontGoHomeOnQuit capability set to true
+ * The device remains in the last left state even after ending the test
+ * when dontGoHomeOnQuit capability is set to true.
  */
 class DoNotGoHomeOnQuitAndroidTest {
 

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * Start Recording to a file, from the device.
+ * Start recording to a file from the device.
  */
 class AudioRecordingIOSTest {
 

@@ -1,0 +1,1 @@
+For more information about this command, see [StartPerformanceTransactionForApplication](https://docs.digital.ai/bundle/TE/page/startperformancetransactionforapplication.html).

@@ -1,0 +1,1 @@
+For more information about this capability, see [Appium OSS Supported Capabilities](https://docs.digital.ai/bundle/TE/page/appium_oss_supported_capabilities.html).

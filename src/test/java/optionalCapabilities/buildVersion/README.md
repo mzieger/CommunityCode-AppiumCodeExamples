@@ -1,0 +1,1 @@
+For more information about this capability, see [Application Setup](https://docs.digital.ai/bundle/TE/page/application_setup.html).

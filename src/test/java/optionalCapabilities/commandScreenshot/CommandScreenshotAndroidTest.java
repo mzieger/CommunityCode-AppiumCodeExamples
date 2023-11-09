@@ -12,7 +12,7 @@ import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
- * In Video Report - will take a screenshot also before and after every action
+ * In a Video Report - will take a screenshot also before and after every action
  * when commandScreenshot capability set to true.
  */
 class CommandScreenshotAndroidTest {
