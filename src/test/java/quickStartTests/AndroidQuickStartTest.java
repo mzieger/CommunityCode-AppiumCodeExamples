@@ -16,9 +16,9 @@ class AndroidQuickStartTest {
 
     AndroidDriver<AndroidElement> driver = null;
     DesiredCapabilities dc = new DesiredCapabilities();
-    final String CLOUD_URL = "<CLOUD_URL>" + "/wd/hub";
-    final String ACCESS_KEY = "<ACCESS_KEY>";
-    final String APPIUM_VERSION = "<APPIUM_VERSION>";
+    final String CLOUD_URL = "https://uscloud.experitest.com/" + "/wd/hub";
+    final String ACCESS_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJ4cC51Ijo5ODQxNTgxLCJ4cC5wIjoyLCJ4cC5tIjoxNjg4OTc3ODQxNjczLCJleHAiOjIwMDUzMTA0MjEsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.7WXp92l220mCg2MkwuBc2pwxGriK0hGgYRxNxIxNeJw";
+    final String APPIUM_VERSION = "1.22.3"";
 
     @BeforeEach
     public void setUp() throws MalformedURLException {
